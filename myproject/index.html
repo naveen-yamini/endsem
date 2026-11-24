@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup Form</title>
+</head>
+<body>
+
+    <form onsubmit="return validateForm()">
+
+        Name:
+        <input type="text" id="Name">
+        <br><br>
+
+        Email:
+        <input type="email" id="Email">
+        <br><br>
+
+        Password:
+        <input type="password" id="Password">
+        <br><br>
+
+        <input type="submit" value="Signup">
+
+    </form>
+
+    <script>
+        function validateForm() {
+
+            var name = document.getElementById("Name").value;
+            var email = document.getElementById("Email").value;
+            var password = document.getElementById("Password").value;
+
+            if (name == "") {
+                alert("Please Enter Name");
+                return false;
+            }
+
+            if (email == "") {
+                alert("Please Enter Email");
+                return false;
+            }
+
+            if (password == "") {
+                alert("Please Enter Password");
+                return false;
+            }
+
+            localStorage.setItem("name", name);
+            localStorage.setItem("email", email);
+            localStorage.setItem("password", password);
+
+            alert("Signup Successful");
+            return false;
+        }
+    </script>
+
+</body>
+</html>
